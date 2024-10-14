@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilioner Diary</title>
+    <!-- ||Tailwind CSS Configuration -->
+ <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: 'rgb(139, 195, 74)',
+                        secondary: 'rgb(17, 17, 17)',
+                        body: 'rgb(248, 246, 243)',
+                        accent: 'rgb(106, 151, 57)',
+                        body_neutral: 'rgb(51, 51, 51)',
+                    },
+                    fontFamily: {
+                          'lato': [' Lato', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        leaf: "url('./images/leaf01.png')",
+                        call_to_action: "url('./images/call.jpg')",
+                    },
+                },
+            },
+        }
+ </script>
+<!-- ||tailwind css and DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+   <!-- google font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<!-- Font awesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="container mx-auto my-10 font-lato">
+    <section class=" grid grid-cols-4">
+        <!-- left seciton -->
+            <section class="col-span-1 bg-[#0E1B34]"> 
+             <div>
+                <h1 class="text-3xl text-white text-center p-4">BILLIONAIRE <br>
+                    DIARY</h1>
+             </div>
+          <div onclick="getpersonrand()" class="bg-[#D9D9D9] w-[70%] mx-auto p-5  text-center hover:bg-white my-5">
+                    <h2 class="text-2xl">Add a user <br> (Randomly)</h2>
+          </div>
+          <div class="bg-[#D9D9D9] w-[70%] mx-auto p-5  text-center hover:bg-white my-5">
+                    <h2 class="text-2xl">Double Money</h2>
+          </div>
+          <div class="bg-[#D9D9D9] w-[70%] mx-auto p-5  text-center hover:bg-white my-5">
+                    <h2 class="text-2xl">Sort By Rank  <br>
+                        (Decending)</h2>
+          </div>
+          <div id="calculateallmoney" class="bg-[#D9D9D9] w-[70%] mx-auto p-5  text-center hover:bg-white my-5">
+                    <h2 class="text-2xl">Calculate Entire Wealth</h2>
+          </div>
+          <div class="w-[70%] mx-auto p-5  text-center my-5">
+                   <img src="./images/icons/divider.png" alt="">
+          </div>
+          <div class="bg-[#D9D9D9] w-[70%] mx-auto p-5  text-center hover:bg-white my-5">
+                    <h2 class="text-2xl">Show All Billionaires</h2>
+          </div>
+          <div class="bg-[#D9D9D9] w-[70%] mx-auto p-5  text-center hover:bg-white my-5">
+                    <h2 class="text-2xl">Richest by industry <br>
+                        (Technology)</h2>
+          </div>
+          <div class="bg-[#D9D9D9] w-[70%] mx-auto p-5  text-center hover:bg-white my-5">
+                    <h2 class="text-2xl">Richest by states <br>
+                        (Texas)</h2>
+          </div>
+
+
+            </section>
+   <!-- right setion  -->
+            <section class="col-span-3 "> 
+                <nav class="bg-[#0E1B34] p-5">
+                    <div class="flex justify-between items-center">
+                      <div >    <div class="flex justify-between items-center"><input type="text" placeholder="seacrch" class="input  p-5 m-5 input-bordered w-full max-w-xs" />
+                        <button class="btn">search</button> 
+                    </div>
+                        <div class="border-b-2 border-white pt-1 ml-5"></div>
+                    </div>
+                     <div>
+                        <img src="./images/logo/logo1.png" alt="" class="w-20 h-20">
+                     </div>
+                    </div>
+                    
+                </nav>
+                <!-- main section  -->
+            <main class="bg-[#D9D9D9] p-5 " >
+     <h1 class="text-3xl ml-40">Hello, User!</h1>
+      <div class="flex justify-between p-5 border-b-4 border-black">
+        <h2 class="text-2xl font-bold ">Person</h2>
+        <h3 class="text-xl font-bold ">Citizenship</h3>
+        <h3 class="text-xl font-bold ">Industry</h3>
+        <h3 class="text-xl font-bold ">Rank</h3>
+        <h3 class="text-xl font-bold ">Wealth</h3>
+      </div>
+      <div class="grid text-center grid-cols-5 p-5 border-b-2 border-white bg-gray-400 hover:bg-white ">
+        <h2 class="text-xl font-bold ">Person</h2>
+        <h3 class=" font-bold ">Citizenship</h3>
+        <h3 class=" font-bold ">Industry</h3>
+        <h3 class="font-bold ">Rank</h3>
+        <h3 class=" font-bold ">Wealth</h3>
+      </div>
+<div id="usercontainer">
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class=" border-b-4 border-black "></div>
+<div class="grid text-left grid-cols-5">
+    <h1 class="text-2xl col-span-4 font-bold">Total</h1>
+    <h1 id="totalamount" class="text-2xl font-bold">$****</h1>
+</div>
+
+
+
+
+                </main>
+
+
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
